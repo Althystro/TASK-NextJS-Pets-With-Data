@@ -1,11 +1,10 @@
-import pets from "@/data/pets";
-
+import getAllPets from "@/actions";
 import PetsContainer from "./components/PetsContainer";
 
-function PetsPage() {
-  return (
-    <PetsContainer pets={pets} />
-  );
-};
+async function PetsPage() {
+  const pets = await getAllPets();
+
+  return <PetsContainer pets={pets} />;
+}
 
 export default PetsPage;
